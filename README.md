@@ -16,7 +16,7 @@
 ##### pom.xml引入
 
     <dependency>
-        <groupId>io.github.wangmeng</groupId>
+        <groupId>io.github.mengwang0211</groupId>
         <artifactId>spring-boot-starter-dingding</artifactId>
         <version>1.0.0</version>
     </dependency>    
