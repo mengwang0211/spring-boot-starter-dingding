@@ -21,12 +21,10 @@ public class RobotPushService {
 
     /**
     * 发送信息
-    * @author RedWall
-    * @mail walkmanlucas@gmail.com
+    * @author RedWall walkmanlucas@gmail.com
     * @param textMsg 消息内容
     * @param msgType 消息类型 text | link | markdown
-    * @date 2019/5/9
-    * @return 
+    * @return Boolean
     **/
     public Boolean sendMsg(String textMsg, String msgType){
         if (!MsgTypeEnum.listAllType().contains(msgType)){

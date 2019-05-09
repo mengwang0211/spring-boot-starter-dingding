@@ -13,7 +13,7 @@
 
 #### 用法
 
-##### pom.xml引入
+##### pom.xml引入[已上传到中央仓库]
 
     <dependency>
         <groupId>io.github.mengwang0211</groupId>

@@ -5,11 +5,7 @@ import java.util.List;
 
 /**
 * 消息类型
-* @author RedWall
-* @mail walkmanlucas@gmail.com
-* @date 2019/5/9
-* @since JDK 1.8
-**/
+*/
 public enum MsgTypeEnum {
 
     DING_MSG_TYPE_TEXT("text"),

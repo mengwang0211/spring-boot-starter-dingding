@@ -2,13 +2,12 @@ package io.github.wangmeng.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-/**
-* 群机器人
-* @author RedWall
-* @mail walkmanlucas@gmail.com
-* @date 2019/5/9
-* @since JDK 1.8
-**/
+///**
+//* 群机器人
+//* @author RedWall walkmanlucas@gmail.com
+//* @date 2019/5/9
+//* @since JDK 1.8
+//**/
 @ConfigurationProperties(prefix = "dingding.properties.robot")
 public class RobotProperties {
 

@@ -17,6 +17,26 @@
         </developer>
     </developers>
 
+    <licenses>
+        <license>
+            <name>Apache License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0</url>
+        </license>
+    </licenses>
+
+    <scm>
+        <tag>master</tag>
+        <url>https://github.com/mengwang0211/spring-boot-starter-dingding.git</url>
+        <connection>scm:git:https://github.com/mengwang0211/spring-boot-starter-dingding.git</connection>
+        <developerConnection>scm:git:https://github.com/mengwang0211/spring-boot-starter-dingding.git</developerConnection>
+    </scm>
+
+    <parent>
+        <groupId>org.sonatype.oss</groupId>
+        <artifactId>oss-parent</artifactId>
+        <version>7</version>
+    </parent>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
