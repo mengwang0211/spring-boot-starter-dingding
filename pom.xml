@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>io.github.wangmeng</groupId>
+    <artifactId>spring-boot-starter-dingding</artifactId>
+    <version>1.0.0</version>
+    <description>dingding for SpringBoot</description>
+
+    <developers>
+        <developer>
+            <organization>github</organization>
+            <name>Meng Wang</name>
+            <email>walkmanlucas@gmail.com</email>
+        </developer>
+    </developers>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-autoconfigure</artifactId>
+            <version>2.1.4.RELEASE</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.alibaba.taobao</groupId>
+            <artifactId>taobao-sdk-java-auto</artifactId>
+            <version>1479188381469-20190507</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.14</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <includeSystemScope>true</includeSystemScope>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
