@@ -24,7 +24,7 @@ public class RobotPushService {
     * 发送信息
     * @author RedWall walkmanlucas@gmail.com
     * @param textMsg 消息内容
-    * @param atMobiles @who
+    * @param atMobiles at who
     * @param message_url link type下 指定的跳转地址
     * @param pic_url link type下 指定的显示的图片url
     * @param title link | markdown type下 指定的显示的title
