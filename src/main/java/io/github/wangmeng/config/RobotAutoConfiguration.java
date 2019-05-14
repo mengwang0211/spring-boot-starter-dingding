@@ -13,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 @EnableConfigurationProperties(RobotProperties.class)
 @ConditionalOnClass(RobotConfiguration.class)
-@ConditionalOnProperty(prefix = "dingding.properties.robot", value = "enabled", matchIfMissing = true)
+@ConditionalOnProperty(prefix = "dingding.robot", value = "enabled", matchIfMissing = true)
 public class RobotAutoConfiguration {
 
 

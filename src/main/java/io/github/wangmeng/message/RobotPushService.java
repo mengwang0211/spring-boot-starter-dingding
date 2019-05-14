@@ -10,6 +10,7 @@ import io.github.wangmeng.entity.MsgTypeEnum;
 import io.github.wangmeng.exception.DingDingException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.util.StringUtils;
 
 import java.util.Arrays;
 
@@ -23,11 +24,18 @@ public class RobotPushService {
     * 发送信息
     * @author RedWall walkmanlucas@gmail.com
     * @param textMsg 消息内容
+    * @param atMobiles @who
+    * @param message_url link type下 指定的跳转地址
+    * @param pic_url link type下 指定的显示的图片url
+    * @param title link | markdown type下 指定的显示的title
     * @param msgType 消息类型 text | link | markdown
     * @return Boolean
     **/
-    public Boolean sendMsg(String textMsg, String msgType){
+    public Boolean sendMsg(String textMsg, String msgType,
+                           String[] atMobiles, String message_url,
+                           String pic_url, String title){
         if (!MsgTypeEnum.listAllType().contains(msgType)){
+            log.error("illegal msgType when dingding robot send message");
             throw new DingDingException("illegal msgType");
         }
         try {
@@ -37,22 +45,26 @@ public class RobotPushService {
             request.setMsgtype(msgType);
             if (MsgTypeEnum.DING_MSG_TYPE_TEXT.getMsgType().equals(msgType)){
                 OapiRobotSendRequest.Text text = new OapiRobotSendRequest.Text();
-                text.setContent(textMsg);
+                text.setContent(StringUtils.isEmpty(textMsg) ? robotProperties.getContent() : textMsg);
                 request.setText(text);
                 OapiRobotSendRequest.At at = new OapiRobotSendRequest.At();
-                at.setAtMobiles(Arrays.asList(robotProperties.getAtMobiles().split(",")));
+                if (atMobiles.length > 0){
+                    at.setAtMobiles(Arrays.asList(atMobiles));
+                }else {
+                    log.warn("Not specified @who");
+                }
                 request.setAt(at);
             }else if (MsgTypeEnum.DING_MSG_TYPE_LINK.getMsgType().equals(msgType)){
                 OapiRobotSendRequest.Link link = new OapiRobotSendRequest.Link();
-                link.setMessageUrl(robotProperties.getMessage_url());
-                link.setPicUrl(robotProperties.getPic_url());
-                link.setTitle(robotProperties.getTitle());
-                link.setText(textMsg);
+                link.setMessageUrl(StringUtils.isEmpty(message_url) ? robotProperties.getMessage_url() : message_url);
+                link.setPicUrl(StringUtils.isEmpty(pic_url) ? robotProperties.getPic_url() : pic_url);
+                link.setTitle(StringUtils.isEmpty(title) ? robotProperties.getTitle() : title);
+                link.setText(StringUtils.isEmpty(textMsg) ? robotProperties.getText() : textMsg);
                 request.setLink(link);
             }else {
                 OapiRobotSendRequest.Markdown markdown = new OapiRobotSendRequest.Markdown();
-                markdown.setTitle(robotProperties.getTitle());
-                markdown.setText(textMsg);
+                markdown.setTitle(StringUtils.isEmpty(title) ? robotProperties.getTitle() : title);
+                markdown.setText(StringUtils.isEmpty(textMsg) ? robotProperties.getText() : textMsg);
                 request.setMarkdown(markdown);
             }
             OapiRobotSendResponse response = client.execute(request);

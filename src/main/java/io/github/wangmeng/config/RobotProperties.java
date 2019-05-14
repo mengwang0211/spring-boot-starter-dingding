@@ -8,7 +8,7 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 //* @date 2019/5/9
 //* @since JDK 1.8
 //**/
-@ConfigurationProperties(prefix = "dingding.properties.robot")
+@ConfigurationProperties(prefix = "dingding.robot")
 public class RobotProperties {
 
 

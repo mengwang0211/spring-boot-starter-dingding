@@ -1,5 +1,8 @@
 ### Spring-Boot-Starter-dingding
 
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.github.mengwang0211/spring-boot-starter-dingding/badge.svg)](https://maven-badges.herokuapp.com/maven-central/io.github.mengwang0211/spring-boot-starter-dingding/)
+[![License](https://img.shields.io/badge/license-Apache%202-4EB1BA.svg)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 #### 钉钉开放平台 SpringBoot插件
 
 ##### 完成功能
@@ -18,7 +21,7 @@
     <dependency>
         <groupId>io.github.mengwang0211</groupId>
         <artifactId>spring-boot-starter-dingding</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>    
     
     
@@ -30,18 +33,9 @@
     #纯文本消息
     #配置
     dingding:
-        properties:
-            robot:
-                # 机器人token
-                access_token: xxxxxxxx
-                # atMobiles 当msg_type == text @who [手机号] 多个手机号以,隔开
-                atMobiles: 13212345678,13212345678
-                # 当msg_type == link or markdown title
-                title: This is title
-                # 当msg_type == link  message_url
-                message_url: https://www.baidu.com
-                # 当msg_type == link  pic_url
-                pic_url: https://f11.baidu.com/it/u=3015675601,699552073&fm=72
+        robot:
+            # 机器人token
+            access_token: xxxxxxxx
                 
                 
 ###### 发送消息
